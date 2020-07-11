@@ -51,13 +51,20 @@ const userSchema = new mongoose.Schema({
             }
         }
     ]
+}, {
+    timestamps: true
 })
 
+
+
+
+
+
+// relationship
 userSchema.virtual('tasks', {
     ref: 'Task',
     localField: '_id',
     foreignField: 'owner'
-
 })
 
 // you can use toJSON = getPublicProfile
